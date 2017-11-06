@@ -1,24 +1,34 @@
 // src/components/About/index.js
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import classnames from 'classnames';
-
+import { addNumber } from '../../stores/reducers/About/index';
 import './style.css';
 
 export default class About extends Component {
-  // static defaultProps = {}
-  // state = {}
+  constructor(props){
+      super(props);
+      this.onClick = this.onClick.bind(this);
+  }
+
+  onClick(){
+      this.props.dispatch(addNumber());
+  }
 
   render() {
-    const { className, ...props } = this.props;
+    const { number } = this.props;
     return (
-      <div className={classnames('About', className)} {...props}>
+      <div className={'About'} >
         <h1>
           About
+            <p>{number}  </p>
+            <button color="danger" onClick={this.onClick}>Button</button>
         </h1>
       </div>
     );
   }
 }
 
-About.propTypes = {};
+About.propTypes = {
+    number: PropTypes.number,
+    dispatch: PropTypes.func
+};
