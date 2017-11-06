@@ -1,11 +1,11 @@
 // src/components/About/index.js
-import React, { PropTypes, Component } from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
 import './style.css';
 
 export default class About extends Component {
-  // static propTypes = {}
   // static defaultProps = {}
   // state = {}
 
@@ -20,3 +20,5 @@ export default class About extends Component {
     );
   }
 }
+
+About.propTypes = {};

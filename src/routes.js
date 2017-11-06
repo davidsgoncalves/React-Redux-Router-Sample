@@ -6,7 +6,7 @@ import App from './components/App/App';
 import About from './components/About';
 import NotFound from './components/NotFound';
 
-const Routes = (props) => (
+const Routes = props => (
     <Router {...props}>
         <Switch>
             <Route path="/" exact component={App} />
